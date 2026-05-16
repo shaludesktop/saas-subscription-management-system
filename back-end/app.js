@@ -13,10 +13,7 @@ import purchaseRoutes from "./routes/purchaseRoutes.js";
 import invoiceRoutes from "./routes/invoiceRoutes.js";
 import saasAppRoutes from "./routes/saasAppRoutes.js";
 
-import {
-  notFound,
-  errorHandler,
-} from "./middleware/errorMiddleware.js";
+import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
 dotenv.config();
 
@@ -24,8 +21,20 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+/* Middleware */
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL || "*",
+    credentials: true,
+  })
+);
+
 app.use(express.json());
+
+/* Test Route */
+app.get("/", (req, res) => {
+  res.send("SaaS Subscription Management API is running");
+});
 
 /* Routes */
 app.use("/api/auth", authRoutes);
