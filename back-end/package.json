@@ -4,11 +4,12 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js",
-    "start": "node app.js",
-    "seed:apps": "node seeds/seedSaasApps.js",
-    "seed:plans": "node seeds/seedPlans.js"
-  },
+  "dev": "nodemon app.js",
+  "start": "node app.js",
+  "seed": "node seeder.js",
+  "seed:apps": "node seeds/seedSaasApps.js",
+  "seed:plans": "node seeds/seedPlans.js"
+},
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
