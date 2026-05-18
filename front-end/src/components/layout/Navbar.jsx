@@ -13,18 +13,26 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white dark:bg-slate-900 shadow px-6 py-4 flex justify-between items-center transition border-b border-gray-200 dark:border-slate-800">
-      
-      {/* Logo */}
+
+      {/* Logo + Title */}
       <Link
         to="/"
-        className="text-2xl font-bold text-blue-600 dark:text-blue-400"
+        className="flex items-center gap-3"
       >
-        SaaS Manager
+        <img
+          src="/favicon.png"
+          alt="SaaS Logo"
+          className="w-10 h-10 object-contain"
+        />
+
+        <h1 className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+          SaaS Manager
+        </h1>
       </Link>
 
       {/* Navigation */}
       <div className="flex items-center gap-4">
-        
+
         <Link
           to="/apps"
           className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
